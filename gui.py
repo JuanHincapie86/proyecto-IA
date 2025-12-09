@@ -151,7 +151,7 @@ class GameApp:
     def __init__(self) -> None:
         pygame.init()
         self.screen = pygame.display.set_mode((config.WINDOW_WIDTH, config.WINDOW_HEIGHT))
-        pygame.display.set_caption("⚡ Yu-Gi-Oh! Forbidden Memories - Minimax AI ⚡")
+        pygame.display.set_caption(" Yu-Gi-Oh! Forbidden Memories - Minimax AI ⚡")
         self.clock = pygame.time.Clock()
         
         # Componentes de UI
@@ -726,12 +726,12 @@ class GameApp:
     def draw_turn_indicator(self) -> None:
         """Dibuja el indicador de turno"""
         if self.state.current_turn == 'player':
-            text = "🎮 TU TURNO 🎮"
+            text = " TU TURNO "
             color = (120, 255, 150)
             bg_start = (30, 100, 50)
             bg_end = (10, 60, 30)
         else:
-            text = "🤖 TURNO IA 🤖"
+            text = " TURNO IA "
             color = (255, 120, 120)
             bg_start = (100, 30, 30)
             bg_end = (60, 10, 10)
@@ -783,11 +783,11 @@ class GameApp:
     def draw_monster_fields(self) -> None:
         """Dibuja los campos de monstruos de ambos jugadores"""
         # Campo de la IA
-        self.draw_field_label("🔴 CAMPO ENEMIGO", self.areas['ai_field'].y, False)
+        self.draw_field_label(" CAMPO ENEMIGO", self.areas['ai_field'].y, False)
         self.draw_monster_row(self.state.ai.monster_zone, self.areas['ai_field'].y + 30, True)
         
         # Campo del jugador
-        self.draw_field_label("🟢 TU CAMPO", self.areas['player_field'].y, True)
+        self.draw_field_label(" TU CAMPO", self.areas['player_field'].y, True)
         self.draw_monster_row(self.state.player.monster_zone, self.areas['player_field'].y + 30, False)
         
         # Contadores de monstruos
@@ -873,11 +873,11 @@ class GameApp:
         self.ui.draw_rounded_rect(self.screen, stats_bg, (20, 20, 20, 200), radius=5)
         
         # ATK
-        atk_text = self.fonts['normal'].render(f"⚔️ {attack}", True, (255, 100, 100))
+        atk_text = self.fonts['normal'].render(f" {attack}", True, (255, 100, 100))
         self.screen.blit(atk_text, (rect.x + 10, rect.y + rect.height - 45))
         
         # DEF
-        def_text = self.fonts['small'].render(f"🛡️ {defense}", True, (100, 150, 255))
+        def_text = self.fonts['small'].render(f" {defense}", True, (100, 150, 255))
         self.screen.blit(def_text, (rect.x + 10, rect.y + rect.height - 25))
 
     def draw_empty_slot(self, rect: pygame.Rect, is_ai: bool) -> None:
@@ -896,20 +896,20 @@ class GameApp:
         player_count = sum(1 for c in self.state.player.monster_zone if c is not None)
         
         # IA
-        ai_text = self.fonts['normal'].render(f"👹 Monstruos: {ai_count}/5", 
+        ai_text = self.fonts['normal'].render(f" Monstruos: {ai_count}/5", 
                                             True, UIStyles.COLORS['ai_primary'])
         self.screen.blit(ai_text, (config.WINDOW_WIDTH - 220, self.areas['ai_field'].y + 5))
         
         # Jugador
-        player_text = self.fonts['normal'].render(f"🛡️ Monstruos: {player_count}/5", 
+        player_text = self.fonts['normal'].render(f" Monstruos: {player_count}/5", 
                                                 True, UIStyles.COLORS['player_primary'])
         self.screen.blit(player_text, (config.WINDOW_WIDTH - 220, self.areas['player_field'].y + 5))
 
     def draw_player_hand(self) -> None:
         """Dibuja la mano del jugador"""
         # Título
-        title = self.fonts['large'].render("🎴 TU MANO", True, UIStyles.COLORS['text_gold'])
-        self.ui.draw_text_with_shadow("🎴 TU MANO", self.fonts['large'],
+        title = self.fonts['large'].render(" TU MANO", True, UIStyles.COLORS['text_gold'])
+        self.ui.draw_text_with_shadow(" TU MANO", self.fonts['large'],
                                      config.WINDOW_WIDTH // 2 - title.get_width() // 2,
                                      self.areas['hand_area'].y + 10,
                                      UIStyles.COLORS['text_gold'])
@@ -1058,13 +1058,13 @@ class GameApp:
     def draw_action_buttons(self) -> None:
         """Dibuja los botones de acción"""
         button_configs = [
-            ('summon', "🟢 INVOCAR", UIStyles.COLORS['btn_summon'], 
+            ('summon', " INVOCAR", UIStyles.COLORS['btn_summon'], 
              "Invocar 1 carta seleccionada"),
-            ('fusion', "🔮 FUSIONAR", UIStyles.COLORS['btn_fusion'],
+            ('fusion', " FUSIONAR", UIStyles.COLORS['btn_fusion'],
              "Fusionar 2 cartas seleccionadas"),
-            ('attack', "⚔️ ATACAR", UIStyles.COLORS['btn_attack'],
+            ('attack', " ATACAR", UIStyles.COLORS['btn_attack'],
              "Atacar con monstruo seleccionado"),
-            ('end_turn', "⏭️ FIN TURNO", UIStyles.COLORS['btn_end'],
+            ('end_turn', "⏭ FIN TURNO", UIStyles.COLORS['btn_end'],
              "Terminar turno sin acción"),
         ]
         
@@ -1330,7 +1330,7 @@ class GameApp:
         if len(self.selected_hand_indices) == 1:
             card_id = self.state.player.hand[self.selected_hand_indices[0]]
             card = self.state.cards[card_id]
-            feedback = f"✅ 1 carta seleccionada: {card.name} - Lista para INVOCAR"
+            feedback = f" 1 carta seleccionada: {card.name} - Lista para INVOCAR"
             color = UIStyles.COLORS['player_primary']
         
         elif len(self.selected_hand_indices) == 2:
@@ -1344,16 +1344,16 @@ class GameApp:
             if fusion_key in self.state.fusions:
                 result_id = self.state.fusions[fusion_key]
                 result_card = self.state.cards[result_id]
-                feedback = f"✨ FUSIÓN DISPONIBLE: {result_card.name} (ATK: {result_card.attack})"
+                feedback = f" FUSIÓN DISPONIBLE: {result_card.name} (ATK: {result_card.attack})"
                 color = UIStyles.COLORS['btn_fusion']
             else:
-                feedback = f"❌ No hay fusión para {card1.name} + {card2.name}"
+                feedback = f" No hay fusión para {card1.name} + {card2.name}"
                 color = UIStyles.COLORS['ai_primary']
         
         elif self.selected_attacker_slot is not None:
             card_id = self.state.player.monster_zone[self.selected_attacker_slot]
             card = self.state.cards[card_id]
-            feedback = f"🎯 Atacante seleccionado: {card.name} - Elige objetivo o 'Atacar' para ataque directo"
+            feedback = f" Atacante seleccionado: {card.name} - Elige objetivo o 'Atacar' para ataque directo"
             color = UIStyles.COLORS['text_gold']
         
         if feedback:
@@ -1393,10 +1393,10 @@ class GameApp:
         
         # Contenido del tooltip
         lines = [
-            f"📖 {card.name}",
-            f"⚔️ ATK: {card.attack}",
-            f"🛡️ DEF: {card.defense}",
-            f"✨ Atributo: {card.attribute}",
+            f" {card.name}",
+            f" ATK: {card.attack}",
+            f" DEF: {card.defense}",
+            f" Atributo: {card.attribute}",
             f"# En mano: {card_index + 1}"
         ]
         
@@ -1525,13 +1525,13 @@ class GameApp:
         
         # Determinar mensaje según ganador
         if self.state.winner == "player":
-            title = "¡VICTORIA! 🏆"
+            title = "¡VICTORIA! "
             color = UIStyles.COLORS['player_primary']
         elif self.state.winner == "ai":
-            title = "DERROTA 💀"
+            title = "DERROTA "
             color = UIStyles.COLORS['ai_primary']
         else:
-            title = "EMPATE 🤝"
+            title = "EMPATE "
             color = UIStyles.COLORS['text_gold']
         
         # Título principal

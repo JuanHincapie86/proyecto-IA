@@ -1,7 +1,7 @@
 
 
 
-# 🎮 Guía Completa: Cómo Jugar Yu-Gi-Oh! Forbidden Memories - Minimax
+#  Guía Completa: Cómo Jugar Yu-Gi-Oh! Forbidden Memories - Minimax
 
 ## Integrantes
 
@@ -9,20 +9,20 @@
 - Juan Jose Hincapie Tascon
 - Sebastian Zacipa Martinez
 
-## 🎯 Objetivo del Juego
+## Objetivo del Juego
 
 **¡Reduce los LP (Life Points) de tu oponente a 0 o menos!**
 
 ### Estados de los LP:
-- **LP > 4000**: ✅ Excelente (ventaja clara)
-- **LP 2000-4000**: ⚠️ Peligroso (equilibrado)
-- **LP < 2000**: 🔴 Crítico (en riesgo de perder)
+- **LP > 4000**:  Excelente (ventaja clara)
+- **LP 2000-4000**:  Peligroso (equilibrado)
+- **LP < 2000**:  Crítico (en riesgo de perder)
 
 ---
 
-## 📋 Las 3 Acciones Disponibles (Solo UNA por Turno)
+##  Las 3 Acciones Disponibles (Solo UNA por Turno)
 
-### 1️⃣ INVOCAR (Summon)
+### 1️ INVOCAR (Summon)
 **Cómo hacerlo:**
 - Haz clic en **1 sola carta** de tu mano (se marca en amarillo)
 - Presiona el botón **"Invocar"**
@@ -39,7 +39,7 @@
 
 ---
 
-### 2️⃣ FUSIONAR (Fusion)
+### 2️ FUSIONAR (Fusion)
 **Cómo hacerlo:**
 - Haz clic en **2 cartas diferentes** de tu mano (ambas se marcan en amarillo)
 - Presiona el botón **"Fusionar"**
@@ -63,7 +63,7 @@ Dragón Blanco (3000 ATK) + Mago Oscuro (2500 ATK)
 
 ---
 
-### 3️⃣ ATACAR (Attack)
+### 3️ ATACAR (Attack)
 **Cómo hacerlo:**
 
 **Opción A - Atacar monstruo enemigo:**
@@ -96,11 +96,11 @@ Si TU ATK = ENEMIGO DEF:
 ```
 Tu Dragón (ATK 3000) vs Mago Enemigo (DEF 2100)
 → Daño = 3000 - 2100 = 900
-→ -900 LP al enemigo ❌
+→ -900 LP al enemigo 
 
 Tu Guerrero (ATK 1800) vs Bestia Enemiga (DEF 2000)
 → Daño = 2000 - 1800 = 200
-→ -200 LP a TI ⚠️
+→ -200 LP a TI 
 → Tu monstruo se destruye
 ```
 
@@ -112,9 +112,9 @@ Tu Guerrero (ATK 1800) vs Bestia Enemiga (DEF 2000)
 
 ---
 
-## 🔧 ¿Por Qué No Puedo Fusionar?
+##  ¿Por Qué No Puedo Fusionar?
 
-### ❌ Razones Comunes:
+###  Razones Comunes:
 
 **1. "No tienes 2 cartas seleccionadas"**
 - Solución: Haz clic en EXACTAMENTE 2 cartas de tu mano
@@ -138,7 +138,7 @@ Tu Guerrero (ATK 1800) vs Bestia Enemiga (DEF 2000)
 
 ---
 
-## 📊 Flujo de un Turno
+##  Flujo de un Turno
 
 ```
 1. INICIO DE TURNO
@@ -163,9 +163,9 @@ Tu Guerrero (ATK 1800) vs Bestia Enemiga (DEF 2000)
 
 ---
 
-## 🏆 Estrategia Para Ganar
+##  Estrategia Para Ganar
 
-### 🎯 Fase 1: Establecimiento (Turnos 1-3)
+###  Fase 1: Establecimiento (Turnos 1-3)
 ```
 ✓ Invoca monstruos débiles
 ✓ Aprende la defensa del enemigo
@@ -173,7 +173,7 @@ Tu Guerrero (ATK 1800) vs Bestia Enemiga (DEF 2000)
 ✓ Observa qué cartas trae el rival
 ```
 
-### ⚔️ Fase 2: Presión (Turnos 4-6)
+###  Fase 2: Presión (Turnos 4-6)
 ```
 ✓ Fusiona tus monstruos débiles
 ✓ Crea monstruos > 2500 ATK
@@ -181,7 +181,7 @@ Tu Guerrero (ATK 1800) vs Bestia Enemiga (DEF 2000)
 ✓ Reduce LP del enemigo lentamente
 ```
 
-### 💥 Fase 3: Ofensiva (Turnos 7+)
+###  Fase 3: Ofensiva (Turnos 7+)
 ```
 ✓ Crea los monstruos más fuertes
 ✓ Ataca directo si el enemigo no tiene defensa
@@ -191,7 +191,7 @@ Tu Guerrero (ATK 1800) vs Bestia Enemiga (DEF 2000)
 
 ---
 
-## 🎴 Cartas Recomendadas para Empezar
+##  Cartas Recomendadas para Empezar
 
 ###  MÁS FUERTES (ATK > 3000):
 - **Dragón Emperador** (3800 ATK) - Definitivamente gana
@@ -292,7 +292,7 @@ Reiniciar       | Botón "Jugar de nuevo" (cuando termina)
 
 ---
 
-## 🚀 Próximo Nivel: Estrategia Avanzada
+##  Próximo Nivel: Estrategia Avanzada
 
 1. **Minimax Analysis**: La IA elige moves óptimos
 2. **Perfect Information**: Ambos ven todas las cartas
